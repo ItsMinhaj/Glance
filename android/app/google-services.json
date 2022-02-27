@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "470483507311",
+    "project_id": "momentou-2bb21",
+    "storage_bucket": "momentou-2bb21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470483507311:android:9f76427e9eb60e5107d59a",
+        "android_client_info": {
+          "package_name": "com.example.blog_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470483507311-fji2pnhtupe2hrkv5dlr87vbp3ien58i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.blog_app",
+            "certificate_hash": "7d9c7c874b5a03dc6dc91d49884112adf90898e7"
+          }
+        },
+        {
+          "client_id": "470483507311-jsecn8d1idvgsl55ap7h45trne4rs67h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4JI97fmZ_Ay-AT607uaK3J5kOwEx3c5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470483507311-jsecn8d1idvgsl55ap7h45trne4rs67h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
