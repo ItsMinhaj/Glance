@@ -1,4 +1,5 @@
 import 'package:blog_app/screens/login/login_screen.dart';
+import 'package:blog_app/screens/splash/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +19,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Glance',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      home: LoginScreen(),
+      home: SplashScreen(),
     );
   }
 }

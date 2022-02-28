@@ -6,6 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class AddPost extends StatefulWidget {
@@ -21,7 +22,7 @@ class _AddPostState extends State<AddPost> {
   File? _image;
   bool showSpinner = false;
   final _picker = ImagePicker();
-  final postRef = FirebaseDatabase.instance.ref().child("posts");
+
   // firebase_storage.FirebaseStorage storage =
   //     firebase_storage.FirebaseStorage.instance;
 
@@ -85,13 +86,18 @@ class _AddPostState extends State<AddPost> {
   }
 
   Future uploadImageToFirebase() async {
+    var date = DateTime.now();
+    final showDate = DateFormat.yMMMMEEEEd().format(date);
+
+    final user = FirebaseAuth.instance;
     return await FirebaseFirestore.instance.collection("posts").doc().set({
       "img": _image!.path,
       "title": titleController.text,
       "description": desController.text,
+      "time": showDate.toString(),
     }).then((value) {
       Navigator.of(context).pop();
-      debugPrint("Post Published");
+      Fluttertoast.showToast(msg: "Post Published");
     }).catchError((e) {
       debugPrint(e.toString());
     });
@@ -103,7 +109,7 @@ class _AddPostState extends State<AddPost> {
       inAsyncCall: showSpinner,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Create Glance"),
+          title: const Text("Create Your Moment"),
           centerTitle: true,
         ),
         body: SingleChildScrollView(

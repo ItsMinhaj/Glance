@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class SignUp extends StatefulWidget {
-  SignUp({Key? key}) : super(key: key);
+  const SignUp({Key? key}) : super(key: key);
 
   @override
   State<SignUp> createState() => _SignUpState();
 }
 
 class _SignUpState extends State<SignUp> {
-  TextEditingController _emailController = TextEditingController();
+  final _emailController = TextEditingController();
 
-  TextEditingController _passController = TextEditingController();
+  final _passController = TextEditingController();
 
   _registration() async {
     try {
@@ -43,6 +43,7 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text("Sign Up"),
         centerTitle: true,
       ),
